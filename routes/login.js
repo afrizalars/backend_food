@@ -42,7 +42,6 @@ exports.login = function (req, res) {
                 throw error
             }
             var payload = {
-                id: results.rows[0].id,
                 nama: results.rows[0].nama,
                 nohp: results.rows[0].nohp,
                 nip: results.rows[0].nip,
