@@ -4,11 +4,11 @@ const cors = require('cors')
 const { pool } = require('./config')
 // const authjwt = require('./middleware')
 // var jwt = require('jsonwebtoken');  
-var bcrypt = require('bcryptjs');
+// var bcrypt = require('bcryptjs');
 
 //token auth
 // global.jwt = jwt
-global.bcrypt = bcrypt
+// global.bcrypt = bcrypt
 // global.authjwt = authjwt
 
 const app = express()
@@ -19,8 +19,8 @@ app.use(cors())
 
 global.pool = pool
 
-const admin = require('./routes/admin')
-const login = require('./routes/login')
+// const admin = require('./routes/admin')
+// const login = require('./routes/login')
 
 // app.get('/api/admin/getdriverlist',authjwt, admin.driverlist)
 // app.get('/api/admin/getwaitinglist_order',authjwt,admin.getwaitinglist_order)
@@ -28,9 +28,12 @@ const login = require('./routes/login')
 // app.get('/api/admin/getwaitinglist_order/getlivetracking',authjwt,admin.getlivetracking)
 
 
-app.post('/api/signup',login.signup)
-app.post('/api/login',login.login)
+// app.post('/api/signup',login.signup)
+// app.post('/api/login',login.login)
 
+app.get('/', function(req,res){
+  res.send("ss")
+})
 
 
 
