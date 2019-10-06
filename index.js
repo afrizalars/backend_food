@@ -3,13 +3,13 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const { pool } = require('./config')
 const authjwt = require('./middleware')
-var jwt = require('jsonwebtoken');  
+// var jwt = require('jsonwebtoken');  
 var bcrypt = require('bcryptjs');
 
 //token auth
-global.jwt = jwt
+// global.jwt = jwt
 global.bcrypt = bcrypt
-global.authjwt = authjwt
+// global.authjwt = authjwt
 
 const app = express()
 
@@ -22,10 +22,10 @@ global.pool = pool
 const admin = require('./routes/admin')
 const login = require('./routes/login')
 
-app.get('/api/admin/getdriverlist',authjwt, admin.driverlist)
-app.get('/api/admin/getwaitinglist_order',authjwt,admin.getwaitinglist_order)
-app.get('/api/admin/getwaitinglist_order/gethistoryorder',authjwt,admin.gethistoryorder)
-app.get('/api/admin/getwaitinglist_order/getlivetracking',authjwt,admin.getlivetracking)
+// app.get('/api/admin/getdriverlist',authjwt, admin.driverlist)
+// app.get('/api/admin/getwaitinglist_order',authjwt,admin.getwaitinglist_order)
+// app.get('/api/admin/getwaitinglist_order/gethistoryorder',authjwt,admin.gethistoryorder)
+// app.get('/api/admin/getwaitinglist_order/getlivetracking',authjwt,admin.getlivetracking)
 
 
 app.post('/api/signup',login.signup)
