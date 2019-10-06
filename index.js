@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const { pool } = require('./config')
-const authjwt = require('./middleware')
+// const authjwt = require('./middleware')
 // var jwt = require('jsonwebtoken');  
 var bcrypt = require('bcryptjs');
 
