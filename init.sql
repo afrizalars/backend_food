@@ -46,6 +46,15 @@ VALUES  ('afrizal', '082220201121','35060115011','Stevens','082221210012','passw
 INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
 VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','waiting','lat','long');
 
+INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
+VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','done','lat','long');
+
+INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
+VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','going','lat','long');
+
+INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
+VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','notapproved','lat','long');
+
 INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
 VALUES ('agung','xx','08998309128','AG090','avansa','available');
 
