@@ -35,7 +35,7 @@ app.get('/', function(req,res){
   res.send("ss")
 }) 
 
-
+//"nodemon": "^1.19.3"
 
 
 
