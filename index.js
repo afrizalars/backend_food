@@ -71,6 +71,6 @@ app.get('/', function(req,res){
 //   .post(addBook)
 
 // Start server
-app.listen(process.env.PORT || 3002, () => {
+app.listen(process.env.PORT || 5002, () => {
   console.log(`Server listening`)
 })
