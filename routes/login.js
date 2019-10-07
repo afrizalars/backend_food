@@ -36,49 +36,49 @@ exports.login = function (req, res) {
         var password = post.password;
 
         var sql = "select * from users where nip = '"+nip+"'"
+        res.send("login")
+        // pool.query(sql, (error, results) => {
+        //     if (error) {
+        //         throw error
+        //     }
+        //     var payload = {
+        //         id: results.rows[0].id,
+        //         nama: results.rows[0].nama,
+        //         nohp: results.rows[0].nohp,
+        //         nip: results.rows[0].nip,
+        //         namaatasan: results.rows[0].namaAtasan,
+        //         nohpatasan: results.rows[0].nohpatasan,
+        //         roles: results.rows[0].roles
+        //        };
 
-        pool.query(sql, (error, results) => {
-            if (error) {
-                throw error
-            }
-            var payload = {
-                id: results.rows[0].id,
-                nama: results.rows[0].nama,
-                nohp: results.rows[0].nohp,
-                nip: results.rows[0].nip,
-                namaatasan: results.rows[0].namaAtasan,
-                nohpatasan: results.rows[0].nohpatasan,
-                roles: results.rows[0].roles
-               };
+        //     var token = jwt.sign(payload, config, {
+        //         expiresIn: 86400 * 30 // expires in 30 days
+        //     });
 
-            var token = jwt.sign(payload, config, {
-                expiresIn: 86400 * 30 // expires in 30 days
-            });
-
-            if(password == cryptr.decrypt(results.rows[0].pass)){
-                if(results.rows[0].roles == 'waiting'){
-                    res.status(200).json({
-                        result : {
-                            status: "notAuth",
-                            token : token,
-                            message : "Your account is still waiting for approval"
-                        }
-                    })
-                } else {
-                    res.status(200).json({
-                        result : {
-                            status: "Auth",
-                            token : token,
-                            message : "Your account is approved"
-                        }
-                    })
-                }
-            } else {
-                res.status(200).json({
-                    result : "notAuth"
-                })
-            }
-          })
+        //     if(password == cryptr.decrypt(results.rows[0].pass)){
+        //         if(results.rows[0].roles == 'waiting'){
+        //             res.status(200).json({
+        //                 result : {
+        //                     status: "notAuth",
+        //                     token : token,
+        //                     message : "Your account is still waiting for approval"
+        //                 }
+        //             })
+        //         } else {
+        //             res.status(200).json({
+        //                 result : {
+        //                     status: "Auth",
+        //                     token : token,
+        //                     message : "Your account is approved"
+        //                 }
+        //             })
+        //         }
+        //     } else {
+        //         res.status(200).json({
+        //             result : "notAuth"
+        //         })
+        //     }
+        //   })
         }
     }
 
