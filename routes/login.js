@@ -41,19 +41,13 @@ exports.login = function (req, res) {
                 throw error
             }
             var payload = {
-                id: results.rows[0].id,
-                nama: results.rows[0].nama,
-                nohp: results.rows[0].nohp,
-                nip: results.rows[0].nip,
-                namaatasan: results.rows[0].namaAtasan,
-                nohpatasan: results.rows[0].nohpatasan,
-                roles: results.rows[0].roles
+                nama: results.rows[0].nama
             };
             var token = jwt.sign(payload, config, {
                 expiresIn: 86400 * 30 // expires in 30 days
             });
 
-            if (password == cryptr.decrypt(results.rows[0].pass)) {
+            if (nip == results.rows[0].nip && password == cryptr.decrypt(results.rows[0].pass)) {
                 if (results.rows[0].roles == 'waiting') {
                     res.status(200).json({
                         result: {
