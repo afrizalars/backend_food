@@ -2,8 +2,8 @@ const Cryptr = require('cryptr');
 cryptr = new Cryptr('myTotalySecretKey');
 const config = 'supersecret'
 
-exports.signup = function(req,res){
-    if(req.method == "POST"){
+exports.signup = function (req, res) {
+    if (req.method == "POST") {
         var post = req.body;
         var nip = post.nip;
         var nama = post.nama
@@ -13,18 +13,18 @@ exports.signup = function(req,res){
         var encryp = cryptr.encrypt(req.body.password);
         var role = 'waiting'
 
-        var sql = "INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES) "+
-        "VALUES  ('"+nama+"', '"+nohp+"','"+nip+"','"+namaAtasan+"','"+noAtasan+"','"+encryp+"','waiting')"
+        var sql = "INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES) " +
+            "VALUES  ('" + nama + "', '" + nohp + "','" + nip + "','" + namaAtasan + "','" + noAtasan + "','" + encryp + "','waiting')"
         pool.query(sql, (error, results) => {
             if (error) {
                 res.status(200).json({
-                    result : "NotOK"
+                    result: "NotOK"
                 })
             }
             res.status(200).json({
-                result : "OK"
+                result: "OK"
             })
-          })
+        })
     }
 }
 
@@ -35,69 +35,47 @@ exports.login = function (req, res) {
         var nip = post.nip;
         var password = post.password;
 
-        var sql = "select * from users where nip = '"+nip+"'"
-        res.send("login")
-        // pool.query(sql, (error, results) => {
-        //     if (error) {
-        //         throw error
-        //     }
-        //     var payload = {
-        //         id: results.rows[0].id,
-        //         nama: results.rows[0].nama,
-        //         nohp: results.rows[0].nohp,
-        //         nip: results.rows[0].nip,
-        //         namaatasan: results.rows[0].namaAtasan,
-        //         nohpatasan: results.rows[0].nohpatasan,
-        //         roles: results.rows[0].roles
-        //        };
+        var sql = "select * from users where nip = '" + nip + "'"
+        pool.query(sql, (error, results) => {
+            if (error) {
+                throw error
+            }
+            var payload = {
+                id: results.rows[0].id,
+                nama: results.rows[0].nama,
+                nohp: results.rows[0].nohp,
+                nip: results.rows[0].nip,
+                namaatasan: results.rows[0].namaAtasan,
+                nohpatasan: results.rows[0].nohpatasan,
+                roles: results.rows[0].roles
+            };
+            var token = jwt.sign(payload, config, {
+                expiresIn: 86400 * 30 // expires in 30 days
+            });
 
-// <<<<<<< HEAD
-        //     var token = jwt.sign(payload, config, {
-        //         expiresIn: 86400 * 30 // expires in 30 days
-        //     });
-// =======
-//         pool.query(sql, (error, results) => {
-//             if (error) {
-//                 throw error
-//             }
-//             var payload = {
-//                 nama: results.rows[0].nama,
-//                 nohp: results.rows[0].nohp,
-//                 nip: results.rows[0].nip,
-//                 namaatasan: results.rows[0].namaAtasan,
-//                 nohpatasan: results.rows[0].nohpatasan,
-//                 roles: results.rows[0].roles
-//                };
-
-//             var token = jwt.sign(payload, config, {
-//                 expiresIn: 86400 * 30 // expires in 30 days
-//             });
-// // >>>>>>> 17966b82856ecf87ff6fcc141c40c8c996bf96fa
-
-//         //     if(password == cryptr.decrypt(results.rows[0].pass)){
-//         //         if(results.rows[0].roles == 'waiting'){
-//         //             res.status(200).json({
-//         //                 result : {
-//         //                     status: "notAuth",
-//         //                     token : token,
-//         //                     message : "Your account is still waiting for approval"
-//         //                 }
-//         //             })
-//         //         } else {
-//         //             res.status(200).json({
-//         //                 result : {
-//         //                     status: "Auth",
-//         //                     token : token,
-//         //                     message : "Your account is approved"
-//         //                 }
-//         //             })
-//         //         }
-//         //     } else {
-//         //         res.status(200).json({
-//         //             result : "notAuth"
-//         //         })
-//         //     }
-//         //   })
-//         })
+            if (password == cryptr.decrypt(results.rows[0].pass)) {
+                if (results.rows[0].roles == 'waiting') {
+                    res.status(200).json({
+                        result: {
+                            status: "notAuth",
+                            token: token,
+                            message: "Your account is still waiting for approval"
+                        }
+                    })
+                } else {
+                    res.status(200).json({
+                        result: {
+                            status: "Auth",
+                            token: token,
+                            message: "Your account is approved"
+                        }
+                    })
+                }
+            } else {
+                res.status(200).json({
+                    result: "notAuth"
+                })
+            }
+        })
     }
 }
