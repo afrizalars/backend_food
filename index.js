@@ -29,6 +29,7 @@ app.get('/api/admin/insertDriver',authjwt,admin.insertDriver)
 app.get('/api/admin/updateStatusDriver',authjwt,admin.updateStatusDriver)
 app.get('/api/admin/cancelOrder', authjwt,admin.cancelOrder)
 app.get('/api/admin/approveOrder',authjwt,admin.approveOrder)
+
 app.get('/api/admin/getwaitinglist_order/getlivetracking',authjwt,admin.getlivetracking)
 
 //login signup
