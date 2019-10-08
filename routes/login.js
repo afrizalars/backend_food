@@ -11,10 +11,19 @@ exports.signup = function (req, res) {
         var namaAtasan = post.namaAtasan
         var noAtasan = post.noAtasan
         var encryp = cryptr.encrypt(req.body.password);
+        var type = post.type
         var role = 'waiting'
 
-        var sql = "INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES) " +
+        var sql = ""
+
+        if (type == "user"){
+            sql = "INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES) " +
             "VALUES  ('" + nama + "', '" + nohp + "','" + nip + "','" + namaAtasan + "','" + noAtasan + "','" + encryp + "','waiting')"
+        } else if(type == "admin"){
+            sql = "INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES) " +
+            "VALUES  ('" + nama + "', '" + nohp + "','" + nip + "','" + namaAtasan + "','" + noAtasan + "','" + encryp + "','admin')"
+        }
+
         pool.query(sql, (error, results) => {
             if (error) {
                 res.status(200).json({
@@ -27,6 +36,7 @@ exports.signup = function (req, res) {
         })
     }
 }
+
 
 exports.login = function (req, res) {
 
@@ -70,6 +80,26 @@ exports.login = function (req, res) {
                     result: "notAuth"
                 })
             }
+        })
+    }
+}
+
+exports.user_approval = function(req,res){
+    if (req.method == "GET"){
+        var nip = req.query.nip
+        var sql = "update users set roles = 'user' where nip = '"+nip+"';"
+
+        pool.query(sql,(err,result) =>{
+            if (err) res.send("Error")
+            else{
+                res.send({
+                    result: "Updated "+nip
+                })
+            }
+        })
+    } else {
+        res.send({
+            result: "Request Harus GET"
         })
     }
 }

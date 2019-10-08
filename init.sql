@@ -30,10 +30,11 @@ CREATE TABLE Orders(
   NIP VARCHAR(255),
   StatusOrder VARCHAR(255),
   latitude VARCHAR(255),
-  longitude VARCHAR(255)
+  longitude VARCHAR(255),
+  batch VARCHAR(255)
 );
 
-
+--USER
 INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES)
 VALUES  ('sada', '082220201121','350601151295011','Stevens','082221210012','password','user');
 
@@ -43,18 +44,28 @@ VALUES  ('yoga', '082220201121','87987967698','','','password','waiting');
 INSERT INTO users (nama,noHp,NIP,NamaAtasan,NoHPatasan,PASS,ROLES)
 VALUES  ('afrizal', '082220201121','35060115011','Stevens','082221210012','password','admin');
 
-INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
-VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','waiting','lat','long');
+-- /USER
 
-INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
-VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','done','lat','long');
 
-INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
-VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','going','lat','long');
+-- ORDERS
+INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude,batch)
+VALUES ('','',NOW(),'08:30:01','11:30:01','','1234567','waiting','','','1');
 
-INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude)
-VALUES ('TES','TES',NOW(),'TES','TES','TES','350601151295011','notapproved','lat','long');
+INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude,batch)
+VALUES ('','',NOW(),'13:30:01','15:30:01','','1234567','pending','','','2');
+
+INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude,batch)
+VALUES ('','',NOW(),'13:30:01','15:30:01','','1234567','done','','','2');
+
+
+
+--DRIVERS
+INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
+VALUES ('agung','','','','','available');
 
 INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
-VALUES ('agung','xx','08998309128','AG090','avansa','available');
+VALUES ('huda','','','','','not available');
+
+INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
+VALUES ('faris','','','','','not available');
 
