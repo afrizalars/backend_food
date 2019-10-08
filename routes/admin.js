@@ -7,7 +7,7 @@ exports.insertDriver = function(req,res){
         var JenisMobil = req.body.JenisMobil
 
         var sql = "INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver) "+
-        "VALUES ('"+namaDriver+"','"+foto+"','"+nohp+"','"+PlatNo+"','"+JenisMobil+"','available');"
+        "VALUES ('"+namaDriver+"','"+foto+"','"+nohp+"','"+PlatNo+"','"+JenisMobil+"','unavailable');"
         
         pool.query(sql, (error, results) => {
             if (error) {

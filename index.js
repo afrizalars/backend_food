@@ -25,17 +25,18 @@ const users = require('./routes/users')
 const features = require('./routes/features')
 
 //Admin
-app.get('/api/admin/insertDriver',authjwt,admin.insertDriver)
-app.get('/api/admin/updateStatusDriver',authjwt,admin.updateStatusDriver)
+app.get('/api/admin/insertDriver',authjwt,admin.insertDriver) //tested
+app.get('/api/admin/updateStatusDriver',authjwt,admin.updateStatusDriver) // tested
+
 app.get('/api/admin/cancelOrder', authjwt,admin.cancelOrder)
 app.get('/api/admin/approveOrder',authjwt,admin.approveOrder)
 
 app.get('/api/admin/getwaitinglist_order/getlivetracking',authjwt,admin.getlivetracking)
 
 //login signup
-app.post('/api/signup',login.signup)
-app.post('/api/login',login.login)
-app.get('/api/user_approval',authjwt,login.user_approval)
+app.post('/api/signup',login.signup) // tested
+app.post('/api/login',login.login) // tested
+app.get('/api/user_approval',authjwt,login.user_approval) // tested
 
 
 //features
@@ -43,9 +44,10 @@ app.get('/api/all/getdriverlist',authjwt, features.driverlist)
 app.get('/api/all/getwaitinglist_order',authjwt,features.getwaitinglist_order)
 app.get('/api/all/gethistoryorder',authjwt,features.gethistoryorder)
 
-
 // //User
 app.get('/api/user/neworder',authjwt,users.insertneworder)
+
+
 
 app.get('/', function(req,res){
   res.send("ss")

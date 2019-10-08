@@ -71,7 +71,6 @@ exports.login = function (req, res) {
                         res.status(200).json({
                             result: {
                                 status: "notAuth",
-                                token: token,
                                 message: "Your account is still waiting for approval"
                             }
                         })
