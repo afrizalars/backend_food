@@ -53,7 +53,10 @@ exports.login = function (req, res) {
 
             if(results.rows.length == 0){
                 res.status(200).json({
-                    result: "notAuth"
+                    result: {
+                        status: "notRegistered",
+                        message: "please register your accout"
+                    }
                 })
             } else {
                 var payload = {
@@ -83,7 +86,10 @@ exports.login = function (req, res) {
                     }
                 } else {
                     res.status(200).json({
-                        result: "notAuth"
+                        result: {
+                            status: "pswd",
+                            message: "password is wrong"
+                        }
                     })
                 }
             }
