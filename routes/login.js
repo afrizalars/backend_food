@@ -50,35 +50,42 @@ exports.login = function (req, res) {
             if (error) {
                 throw error
             }
-            var payload = {
-                nama: results.rows[0].nama
-            };
-            var token = jwt.sign(payload, config, {
-                expiresIn: 86400 * 30 // expires in 30 days
-            });
 
-            if (nip == results.rows[0].nip && password == cryptr.decrypt(results.rows[0].pass)) {
-                if (results.rows[0].roles == 'waiting') {
-                    res.status(200).json({
-                        result: {
-                            status: "notAuth",
-                            token: token,
-                            message: "Your account is still waiting for approval"
-                        }
-                    })
-                } else {
-                    res.status(200).json({
-                        result: {
-                            status: "Auth",
-                            token: token,
-                            message: "Your account is approved"
-                        }
-                    })
-                }
-            } else {
+            if(results.rows.length == 0){
                 res.status(200).json({
                     result: "notAuth"
                 })
+            } else {
+                var payload = {
+                    nama: results.rows[0].nama
+                };
+                var token = jwt.sign(payload, config, {
+                    expiresIn: 86400 * 30 // expires in 30 days
+                });
+    
+                if (nip == results.rows[0].nip && password == cryptr.decrypt(results.rows[0].pass)) {
+                    if (results.rows[0].roles == 'waiting') {
+                        res.status(200).json({
+                            result: {
+                                status: "notAuth",
+                                token: token,
+                                message: "Your account is still waiting for approval"
+                            }
+                        })
+                    } else {
+                        res.status(200).json({
+                            result: {
+                                status: "Auth",
+                                token: token,
+                                message: "Your account is approved"
+                            }
+                        })
+                    }
+                } else {
+                    res.status(200).json({
+                        result: "notAuth"
+                    })
+                }
             }
         })
     }

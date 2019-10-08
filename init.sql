@@ -31,7 +31,8 @@ CREATE TABLE Orders(
   StatusOrder VARCHAR(255),
   latitude VARCHAR(255),
   longitude VARCHAR(255),
-  batch VARCHAR(255)
+  batch VARCHAR(255),
+  id_trip VARCHAR(255)
 );
 
 --USER
