@@ -1,6 +1,13 @@
 exports.driverlist = function(req,res){
     if(req.method == "GET"){
-        pool.query('SELECT * FROM driver', (error, results) => {
+        var filter = req.query.filter
+
+        var sql = "SELECT * FROM driver"
+        if(filter != null){
+            sql = "SELECT * FROM driver where statusdriver ='"+filter+"'"
+        }
+        
+        pool.query(sql , (error, results) => {
             if (error) {
               throw error
             }
