@@ -20,6 +20,23 @@ exports.insertDriver = function(req,res){
     }
 }
 
+exports.getorder = function(req,res){
+    if(req.method == "GET"){
+
+        var sql = "select a.id,a.orderfrom,a.orderto,a.orderdate,a.gotime,a.backtime,a.notes,a.statusorder,b.nama,b.nohp from trips a left join users b on a.nip = b.nip and a.statusorder = 'pending'"
+        
+        pool.query(sql, (error, results) => {
+            if (error) {
+              throw error
+            }
+            res.status(200).json({
+                results: results.rows
+            })
+          })
+    }
+}
+
+
 exports.updateStatusDriver = function(req,res){
     if(req.method == "GET"){
         var id = req.body.id_driver
