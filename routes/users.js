@@ -1,5 +1,5 @@
 exports.insertneworder = function (req, res) {
-    if (req.method == "GET") {
+    if (req.method == "POST") {
         var reqjson = req.body.data
 
         const jsondata = JSON.parse(reqjson);

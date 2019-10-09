@@ -46,7 +46,7 @@ app.get('/api/all/getwaitinglist_order',authjwt,features.getwaitinglist_order)
 app.get('/api/all/gethistoryorder',authjwt,features.gethistoryorder)
 
 // //User
-app.get('/api/user/neworder',users.insertneworder)
+app.post('/api/user/neworder',users.insertneworder)
 
 
 
