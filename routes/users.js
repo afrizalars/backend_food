@@ -4,17 +4,18 @@ exports.insertneworder = function (req, res) {
 
         const jsondata = JSON.parse(reqjson);
         const json = jsondata.FormOrderModel
-        var batch = '2'
+        var batch = '1'
 
         for (key in json) {
             // insertdata(key.)
-            console.log(json[key].destinationBackTime)
+            // console.log()
             insertdata(json[key].destinationFrom,
                 json[key].destinationTo,
                 json[key].destinationGoTime,
+                json[key].destinationBackTime,
                 json[key].destinationNotes,
-                '12345',
-                '','',batch)
+                json[key].Nip,
+                json[key].Latitude,json[key].Longitude,json[key].batch)
         }
         res.send({
             result: "sukses insert"
