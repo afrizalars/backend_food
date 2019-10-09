@@ -73,10 +73,11 @@ exports.cancelOrder = function(req,res){
 }
 
 exports.approveOrder = function(req,res){
-    if(req.method == "GET"){
-        var id = req.body.id_driver
+    if(req.method == "POST"){
+        var id = req.body.id
+        var status = req.body.status
 
-        var sql = "update orders set statusorder = 'waiting' where statusOrder = 'pending' and id = '"+id+"';"
+        var sql = "update trips set statusorder = '"+status+"' where id = '"+id+"';"
         
         pool.query(sql, (error, results) => {
             if (error) {

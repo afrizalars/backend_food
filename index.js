@@ -28,9 +28,10 @@ const features = require('./routes/features')
 app.get('/api/admin/insertDriver',authjwt,admin.insertDriver) //tested
 app.get('/api/admin/updateStatusDriver',authjwt,admin.updateStatusDriver) // tested
 app.get('/api/admin/getorder',authjwt,admin.getorder)
+app.post('/api/admin/approveOrder',authjwt,admin.approveOrder)
 
 app.get('/api/admin/cancelOrder', authjwt,admin.cancelOrder)
-app.get('/api/admin/approveOrder',authjwt,admin.approveOrder)
+
 
 app.get('/api/admin/getwaitinglist_order/getlivetracking',authjwt,admin.getlivetracking)
 
