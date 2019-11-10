@@ -53,7 +53,7 @@ app.post('/api/user/neworder',users.insertneworder)
 
 
 
-app.get('/', function(req,res){
+app.get('/get_food_data', function(req,res){
   res.send("ss")
 }) 
 

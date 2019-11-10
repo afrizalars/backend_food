@@ -50,7 +50,7 @@ exports.login = function (req, res) {
             if (error) {
                 throw error
             }
-
+            
             if(results.rows.length == 0){
                 res.status(200).json({
                     result: {

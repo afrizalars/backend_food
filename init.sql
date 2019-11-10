@@ -38,7 +38,7 @@ CREATE TABLE Trips(
 );
 
 INSERT INTO Trips (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude,batch)
-VALUES ('','',NOW(),'08:30:01','11:30:01','','12345','waiting','','','1');
+VALUES ('','',NOW(),'08:30:01','11:30:01','','12345','pending','','','1');
 
 CREATE TABLE Orders(
   ID UUID NOT NULL DEFAULT uuid_generate_v1(),
@@ -51,11 +51,6 @@ CREATE TABLE Orders(
 -- INSERT INTO Orders (NIP,DateOrder,id_trip)
 -- VALUES ('12345',NOW(),'2774395a-e9b0-11e9-aa5b-d0817ac0ff28');
 
-
-
-
-
-
 -- INSERT INTO Orders (OrderFrom,OrderTo,OrderDate,GoTime,BackTime,Notes,NIP,StatusOrder,latitude,longitude,batch)
 -- VALUES ('','',NOW(),'13:30:01','15:30:01','','1234567','pending','','','2');
 
@@ -64,11 +59,11 @@ CREATE TABLE Orders(
 
 
 -- --DRIVERS
--- INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
--- VALUES ('agung','','','','','available');
+INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
+VALUES ('agung','','','','','available');
 
--- INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
--- VALUES ('huda','','','','','not available');
+INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
+VALUES ('huda','','','','','not available');
 
--- INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
--- VALUES ('faris','','','','','not available');
+INSERT INTO Driver (nama,foto,noHp,PlatNo,JenisMobil,StatusDriver)
+VALUES ('faris','','','','','not available');
