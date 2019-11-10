@@ -53,9 +53,7 @@ app.post('/api/user/neworder',users.insertneworder)
 
 
 
-app.get('/get_food_data', function(req,res){
-  res.send("ss")
-}) 
+app.get('/get_foods_fact', features.getfoods_fact)
 
 //"nodemon": "^1.19.3"
 
