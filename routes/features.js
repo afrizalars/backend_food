@@ -15,7 +15,7 @@ exports.getfoods_fact = function(req,res){
 exports.getfoods_fact_dev = function(req,res){
     if(req.method == "GET"){
 
-        var sql = "SELECT * FROM foods_fact limit 10;"
+        var sql = "SELECT * FROM foods_fact order by index desc limit 2;"
         
         pool.query(sql , (error, results) => {
             if (error) {
