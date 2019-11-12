@@ -54,7 +54,7 @@ app.post('/api/user/neworder',users.insertneworder)
 
 
 app.get('/get_foods_fact', features.getfoods_fact)
-
+app.get('/getfoods_fact_dev',features.getfoods_fact_dev)
 //"nodemon": "^1.19.3"
 
 

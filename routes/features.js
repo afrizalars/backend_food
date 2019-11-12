@@ -12,6 +12,20 @@ exports.getfoods_fact = function(req,res){
     }
 }
 
+exports.getfoods_fact_dev = function(req,res){
+    if(req.method == "GET"){
+
+        var sql = "SELECT * FROM foods_fact limit 10;"
+        
+        pool.query(sql , (error, results) => {
+            if (error) {
+              throw error
+            }
+            res.status(200).json(results.rows)
+          })
+    }
+}
+
 exports.driverlist = function(req,res){
     if(req.method == "GET"){
         var filter = req.query.filter
