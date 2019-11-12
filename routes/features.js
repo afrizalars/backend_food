@@ -1,7 +1,7 @@
 exports.getfoods_fact = function(req,res){
     if(req.method == "GET"){
 
-        var sql = "SELECT * FROM foods_fact;"
+        var sql = "SELECT * FROM foods_fact order by index desc;"
         
         pool.query(sql , (error, results) => {
             if (error) {
