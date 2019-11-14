@@ -6,118 +6,117 @@ calcium_100g,iron,nutrition_score_100g,time_delta,is_liquid_binary,"liquid/solid
 values (0000000004558,2235,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
 
-
-insert into export (code,index,product_name,countries_en,
+insert into foods_fact (code,index,product_name,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2236,'Rendang','Indonesia','Red Chilli Pepper, shallots, macadamia nuts, garlic, turmeric, fresh ginger, beef chuck, lemongrass, coconut milk, clove, nutmeg.',
+values (0011110111531,2235,'Rendang','Indonesia','Red Chilli Pepper, shallots, macadamia nuts, garlic, turmeric, fresh ginger, beef chuck, lemongrass, coconut milk, clove, nutmeg.',
 '318 g ()',0,'b',815,11.07,6.482,0,29,4.49,1.31,1.7,19.68,0,184,50,6.0,30,
 2.38,0,0,318);
 
-insert into export (code,index,product_name,countries_en,
+insert into foods_fact (code,index,product_name,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2237,'Ayam Goreng','Indonesia','Ayam Goreng.',
+values (0011110111531,2236,'Ayam Goreng','Indonesia','Ayam Goreng.',
 '300 g ()',0,'b',1090,14.55,8.964,1.509,57,10.76,0.26,1.4,21.93,0,350,0,0,0,0,0,
 0,300);
 
-insert into export (code,index,product_name,countries_en,
+insert into foods_fact (code,index,product_name,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2238,'Soto Ayam','Indonesia','Noodle, chicken meat and skin, balsam-pear, mung beans, cilantro, garlic, ginger, shallots, lemon grass, hard-boiled egg, rice bran vegetable oil, cumin, black pepper, turmeric, salt, water.',
+values (0011110111531,2237,'Soto Ayam','Indonesia','Noodle, chicken meat and skin, balsam-pear, mung beans, cilantro, garlic, ginger, shallots, lemon grass, hard-boiled egg, rice bran vegetable oil, cumin, black pepper, turmeric, salt, water.',
 '241 g ()',0,'b',542,6.19,1.601,0,53,8.11,0.41,0.7,9.96,0,87,127,1.4,19,1.33,0,
 0,241);
 
-insert into export (code,index,product_name,countries_en,
+insert into foods_fact (code,index,product_name,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2239,'Mie Ayam','Indonesia','egg noodle, chicken meat, cabbage, onions, hard-boiled egg, canola vegetable oil.',
+values (0011110111531,2238,'Mie Ayam','Indonesia','egg noodle, chicken meat, cabbage, onions, hard-boiled egg, canola vegetable oil.',
 '240 g ()',0,'b',733,7.81,0.989,0,44,19.25,0.55,1,6.96,0,16,57,0.7,11,1.24,0,
 0,240);
 
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2240,'Mie Goreng','Indomie','Indonesia','1 Bungkus penuh kelezatan Indomie.',
+values (0011110111531,2239,'Mie Goreng','Indomie','Indonesia','1 Bungkus penuh kelezatan Indomie.',
 '85 g ()',0,'b',1871,16.47,8.24,0,0,63.53,9.41,0,9.41,0,0,0,0,0,0,0,
 0,85);
 
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2241,'Nasi Goreng','','Indonesia','White rice, chicken breast, shrimp, tamarind, garlic, mung beans, scallions, green peas, soy sauce, egg, vegetable oil.',
+values (0011110111531,2240,'Nasi Goreng','','Indonesia','White rice, chicken breast, shrimp, tamarind, garlic, mung beans, scallions, green peas, soy sauce, egg, vegetable oil.',
 '149 g ()',0,'b',703,6.23,1.137,2.699,52,21.06,0.76,0.7,6.3,0,415,0,0,0,0,0,
 0,149);
 
 
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2242,'Bubur Ayam','','Indonesia','Price, chicken, garlic, onions, parsley, soy sauce, sesame oil, pepper, salt, water.',
+values (0011110111531,2241,'Bubur Ayam','','Indonesia','Price, chicken, garlic, onions, parsley, soy sauce, sesame oil, pepper, salt, water.',
 '240 g ()',0,'b',649,5.16,1.397,1.231,30,15.05,0.08,0.8,11.48,0,244,0,0,0,0,0,
 0,240);
 
 
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2243,'Durian','','Indonesia','Durian Fruit.',
+values (0011110111531,2242,'Durian','','Indonesia','Durian Fruit.',
 '100 g ()',0,'b',615,5.33,0,0,0,27.09,0,3.8,1.47,0,2,0,0,0,0,0,
 0,100);
 
 
 ////Belom
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2244,'Gado Gado','','Indonesia','Lime juice, mung beans, green snap beans, Chinese cabbage, garlic, potatoes, peanuts, egg, peanut oil, salt, pepper.',
+values (0011110111531,2243,'Gado Gado','','Indonesia','Lime juice, mung beans, green snap beans, Chinese cabbage, garlic, potatoes, peanuts, egg, peanut oil, salt, pepper.',
 '241 g ()',0,'b',553,7.41,1.386,2.034,78,10.9,1.84,2.9,7.14,0,126,0,0,0,0,0,
 0,241);
 
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2245,'Es Kopi Susu dan Gula','','Indonesia','Kopi, susu, gula.',
+values (0011110111531,2244,'Es Kopi Susu dan Gula','','Indonesia','Kopi, susu, gula.',
 '180 ml ()',0,'b',72,0.08,0.045,0.006,0,4.04,3.69,0,0.18,0,3,0,0,0,0,0,
 0,180);
 
-insert into export (code,index,product_name,brands,countries_en,
+insert into foods_fact (code,index,product_name,brands,countries_en,
 ingredients_text,serving_size,additives_n,nutrition_grade_fr,
 energy_100g,fat_100g,saturated_fat_100g,trans_fat_100g,cholesterol_100g,
 carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,sodium_100g,
 vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_100g,
 is_liquid_binary,serving_size_in_g) 
-values (0011110111531,2246,'Bubble Milk Tea','','Indonesia','Tea, milk, sugar, boba.',
+values (0011110111531,2245,'Bubble Milk Tea','','Indonesia','Tea, milk, sugar, boba.',
 '500 ml ()',0,'b',133.8,1.2,0,0,0,5.4,5,0,0.08,0,8,0,0,0,0,0,
 0,500);
 
