@@ -29,7 +29,7 @@ exports.searchfood = function(req,res){
 exports.detailfood = function(req,res){
     if(req.method == "GET"){
         var id = req.query.id
-        var sql = "select * from foods_fact where index = "+id+";"
+        var sql = "select * from foods_fact_full where index = "+id+";"
         
         pool.query(sql , (error, results) => {
             if (error) {
