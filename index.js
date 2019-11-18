@@ -23,6 +23,10 @@ const features = require('./routes/features')
 
 
 app.get('/get_foods_fact', features.getfoods_fact)
+app.get('/searchfood',features.searchfood)
+app.get('/detailfood',features.detailfood)
+
+
 app.get('/getfoods_fact_dev',features.getfoods_fact_dev)
 
 // Start server

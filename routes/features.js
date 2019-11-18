@@ -12,6 +12,34 @@ exports.getfoods_fact = function(req,res){
     }
 }
 
+exports.searchfood = function(req,res){
+    if(req.method == "GET"){
+        var name = req.query.name
+        var sql = "select code, index, product_name from foods_fact_full where product_name ilike '%"+name+"%';"
+        
+        pool.query(sql , (error, results) => {
+            if (error) {
+              throw error
+            }
+            res.status(200).json(results.rows)
+          })
+    }
+}
+
+exports.detailfood = function(req,res){
+    if(req.method == "GET"){
+        var id = req.query.id
+        var sql = "select * from foods_fact where index = "+id+";"
+        
+        pool.query(sql , (error, results) => {
+            if (error) {
+              throw error
+            }
+            res.status(200).json(results.rows)
+          })
+    }
+}
+
 exports.getfoods_fact_dev = function(req,res){
     if(req.method == "GET"){
 

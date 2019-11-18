@@ -158,3 +158,6 @@ SQL ALTER TABLE export ADD PRIMARY KEY (index); SQL
 "is_liquid_binary" : 1,
 "liquid/solid" : liquid,
 "serving_size_in_g" : 340
+
+
+select code, index, product_name from foods_fact where product_name ilike '%milk%';
