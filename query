@@ -161,3 +161,5 @@ SQL ALTER TABLE export ADD PRIMARY KEY (index); SQL
 
 
 select code, index, product_name from foods_fact where product_name ilike '%milk%';
+
+select * from foods_fact where index = 1687;

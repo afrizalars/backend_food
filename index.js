@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const { pool } = require('./config')
 const authjwt = require('./middleware')
-var jwt = require('jsonwebtoken');  
+var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 
 //token auth
@@ -23,11 +23,15 @@ const features = require('./routes/features')
 
 
 app.get('/get_foods_fact', features.getfoods_fact)
-app.get('/searchfood',features.searchfood)
-app.get('/detailfood',features.detailfood)
+app.get('/searchfood', features.searchfood)
+app.get('/detailfood', features.detailfood)
 
 
-app.get('/getfoods_fact_dev',features.getfoods_fact_dev)
+//LOAD ROUTES
+const foods = require("./routes/foods");
+
+//USER ROUTES
+app.use("/api/foods", foods);
 
 // Start server
 app.listen(process.env.PORT || 5002, () => {
