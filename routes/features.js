@@ -7,7 +7,7 @@ exports.getfoods_fact = function(req,res){
             if (error) {
               throw error
             }
-            res.status(200).json(results.fields[0].name)
+            res.status(200).json(results.rows[0].index)
           })
     }
 }
