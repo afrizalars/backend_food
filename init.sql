@@ -10,6 +10,44 @@ CREATE TABLE users (
   CONSTRAINT ID_users PRIMARY KEY (ID)
 );
 
+CREATE TABLE Food_History (
+  id SERIAL,
+  USERID VARCHAR(255) NOT NULL,
+  FoodID VARCHAR(255) NOT NULL,
+  ServingSize INT NOT NULL,
+  Tanggal DATE,
+  CONSTRAINT USERID PRIMARY KEY (USERID)
+);
+
+INSERT INTO Food_History(USERID,FoodID,ServingSize,Tanggal) VALUES(111000,8040173033475,2,NOW());
+
+INSERT INTO Food_History(USERID,FoodID,ServingSize,Tanggal,time,timestamp) VALUES(98098098,8040173033475,2,NOW(),'breakfast',NOW());
+
+
+SELECT sum(energy_100g) as t_energy,sum(fat_100g) as t_fat,sum(carbohydrates_100g) as t_carbo,sum(proteins_100g) as t_protein
+FROM food_history LEFT JOIN foods_fact_full ON food_history.foodid = foods_fact_full.index::text 
+WHERE food_history.userid ='5c98ab37a5cacc1ea8b718c4'
+AND food_history.tanggal > current_timestamp - interval '30 day';
+
+
+SELECT tanggal,avg(energy_100g),avg(energy_100g/4.184) as t_energy
+FROM food_history LEFT JOIN foods_fact_full ON food_history.foodid = foods_fact_full.index::text 
+WHERE food_history.userid ='5c98ab37a5cacc1ea8b718c4'
+AND food_history.tanggal > current_timestamp - interval '30 day' GROUP BY food_history.tanggal
+ORDER BY food_history.tanggal DESC;
+
+
+
+SELECT * FROM Food_History a, Foods_fact_full b where a.tanggal > current_timestamp - interval '30 day' and a.FoodID = b.code and a.USERID = '"+userid+"';
+var sql = "SELECT * FROM Food_History a, Foods_fact_full b where a.tanggal > current_timestamp - interval '30 day' and a.FoodID = b.code and a.USERID = '"+userid+"';"
+SELECT * FROM Food_History a, Foods_fact_full b where a.FoodID = b.code and a.USERID = '111000';
+
+
+SELECT avg(energy_100g)/4.184 as avg_cal 
+            FROM food_history LEFT JOIN foods_fact_full ON food_history.foodid = foods_fact_full.index::text
+            WHERE food_history.userid ='5c98ab37a5cacc1ea8b718c4'
+            AND food_history.tanggal > current_timestamp - interval '30 day'; 
+
 CREATE TABLE Driver(
   ID UUID NOT NULL DEFAULT uuid_generate_v1(),
   nama VARCHAR(255) NOT NULL,

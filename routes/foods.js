@@ -5,7 +5,7 @@ const router = express.Router();
 router.post("/list", (req, res) => {
     if (req.method == "GET") {
 
-        var sql = "SELECT * FROM foods_fact_full order by index desc;"
+        var sql = "SELECT * FROM foods_fact_full order by index desc limit 2;"
 
         pool.query(sql, (error, results) => {
             if (error) {
