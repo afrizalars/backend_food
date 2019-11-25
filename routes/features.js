@@ -81,7 +81,7 @@ exports.monthlyfood = function (req, res) {
                             status: 200,
                             success: true,
                             data: {
-                                monthly: results.rows,
+                                monthly: results.rows[0].t_energy,
                                 avgcalperday: reslts.rows
                             }
                         });
