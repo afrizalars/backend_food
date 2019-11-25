@@ -25,6 +25,7 @@ const features = require('./routes/features')
 app.get('/get_foods_fact', features.getfoods_fact)
 app.get('/searchfood', features.searchfood)
 app.get('/detailfood', features.detailfood)
+app.get('/monthly', features.monthlyfood)
 
 
 //LOAD ROUTES

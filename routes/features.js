@@ -39,3 +39,55 @@ exports.detailfood = function(req,res){
           })
     }
 }
+
+exports.monthlyfood = function (req, res) {
+    if (req.method == "GET") {
+        var id = req.query.id;
+        var sql = "SELECT sum(energy_100g) as t_energy,sum(fat_100g) as t_fat,sum(carbohydrates_100g) as t_carbo, " +
+            "sum(proteins_100g) as t_protein " +
+            "FROM food_history LEFT JOIN foods_fact_full ON food_history.foodid = foods_fact_full.index::text " +
+            "WHERE food_history.userid ='" + id + "' " +
+            "AND food_history.tanggal > current_timestamp - interval '30 day';"
+
+        var sqlcal = "SELECT avg(energy_100g)/4.184 as avg_cal " +
+            "FROM food_history LEFT JOIN foods_fact_full ON food_history.foodid = foods_fact_full.index::text " +
+            "WHERE food_history.userid ='" + id + "' " +
+            "AND food_history.tanggal > current_timestamp - interval '30 day' ";
+
+        pool.query(sql, (error, results) => {
+            if (error) {
+                res.send({
+                    status: 400,
+                    success: false,
+                    data: null
+                });
+            }
+            pool.query(sqlcal, (err, reslts) => {
+                if (err) {
+                    res.send({
+                        status: 400,
+                        success: false,
+                        data: null
+                    });
+                } else {
+                    if(results.rows.length == 0 || reslts.rows.length == 0){
+                        res.status(200).json({
+                            status: 200,
+                            success: true,
+                            data: []
+                        });
+                    } else{
+                        res.status(200).json({
+                            status: 200,
+                            success: true,
+                            data: {
+                                monthly: results.rows,
+                                avgcalperday: reslts.rows
+                            }
+                        });
+                    }
+                }
+            })
+        });
+    }
+};
