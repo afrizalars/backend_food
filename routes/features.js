@@ -87,7 +87,7 @@ exports.monthlyfood = function (req, res) {
                                     t_carbo : results.rows[0].t_carbo,
                                     t_protein : results.rows[0].t_protein  
                                 },
-                                avgcalperday: reslts.rows.avg_cal
+                                avgcalperday: reslts.rows[0].avg_cal
                             }
                         });
                     }
