@@ -81,8 +81,13 @@ exports.monthlyfood = function (req, res) {
                             status: 200,
                             success: true,
                             data: {
-                                monthly: results.rows[0].t_energy,
-                                avgcalperday: reslts.rows
+                                monthly: {
+                                    t_energy: results.rows[0].t_energy,
+                                    t_fat: results.rows[0].t_fat,
+                                    t_carbo : results.rows[0].t_carbo,
+                                    t_protein : results.rows[0].t_protein  
+                                },
+                                avgcalperday: reslts.rows.avg_cal
                             }
                         });
                     }
